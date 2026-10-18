@@ -3,4 +3,4 @@
 // which each device stores at setup and which is never in this repository.
 export const API_URL = 'https://script.google.com/macros/s/AKfycbwgGNiXOeGRBebr3h6Lq6bJyPgP-3pv5Qbt5wGtc0gAkBxYxe3sw6yM3m97FfVsWaxw/exec';
 
-export const APP_VERSION = '0.2.0';
+export const APP_VERSION = '0.2.1';

@@ -1,7 +1,7 @@
 // Service worker: keeps the app itself available offline and loading instantly.
 // Hub data never goes through here (it's POSTed to Apps Script and kept in IndexedDB).
 // Bump VERSION whenever app files change so devices pick up the update.
-const VERSION = 'hh-0.2.0';
+const VERSION = 'hh-0.2.1';
 
 const SHELL = [
   './',
@@ -20,7 +20,10 @@ const SHELL = [
 ];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(VERSION).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+  // cache: 'reload' skips the browser's HTTP cache, so an update never stores yesterday's files.
+  event.waitUntil(caches.open(VERSION)
+    .then((cache) => cache.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' }))))
+    .then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (event) => {

@@ -36,15 +36,15 @@ export function Setup(props) {
       <button role="tab" aria-selected=${code ? 'false' : 'true'} onClick=${() => { setWay('key'); setValue(''); setError(''); }}>Household key</button>
     </div>
 
-    <form class="stack" style="gap:var(--gap)" onSubmit=${submit}>
+    <form class="stack" style="gap:var(--gap)" onSubmit=${submit} novalidate>
       ${code
-        ? html`<div class="field">
+        ? html`<div class="field" key="code-field">
             <label for="code">Pairing code</label>
-            <input id="code" class="input input-code" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code"
+            <input id="code" class="input input-code" inputmode="numeric" maxlength="6" autocomplete="one-time-code"
               value=${value} onInput=${(e) => setValue(e.target.value.replace(/\D/g, ''))} placeholder="000000" />
             <span class="small muted">On a phone that's already set up: Settings › Add another device.</span>
           </div>`
-        : html`<div class="field">
+        : html`<div class="field" key="key-field">
             <label for="key">Household key</label>
             <input id="key" class="input" autocomplete="off" autocapitalize="off" spellcheck="false"
               value=${value} onInput=${(e) => setValue(e.target.value)} placeholder="Paste the key" />
