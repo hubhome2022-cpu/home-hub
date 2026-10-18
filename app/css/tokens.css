@@ -1,0 +1,109 @@
+/* Home Hub design tokens — grown from the Fridge Recipe Box canvas.
+ *
+ * Sizing: 1rem = 10 "design pixels".
+ *   Hub (fridge, portrait): the root font scales with the screen so the 1080-px-wide
+ *   mockups map 1:1 whatever the browser's real pixel density is.
+ *   Phone: 1rem = 10 CSS px, so 1.6rem = 16px.
+ */
+
+:root {
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ground: #F3F1EE;
+  --surface: #FFFFFF;
+  --surface-2: #FBFAF8;
+  --sunken: #E6E2DC;
+  --line: #DAD5CD;
+  --line-soft: #EFECE7;
+  --ink: #1F2321;
+  --muted: #5E625F;
+  --faint: #8A8F8B;
+  --on-accent: #FFFFFF;
+  --on-ink: #FFFFFF;
+
+  --green: #2F6B4F;        /* text and icons */
+  --green-fill: #3E8A66;   /* buttons, checks */
+  --green-soft: #EEF4F0;
+  --orange: #F08A4B;       /* timers, "now" */
+  --amber-mark: #B4531F;   /* overdue rings, streak flame */
+  --amber-ink: #8A4410;    /* overdue text */
+  --amber-soft: #FCEBD9;
+  --note: #FBF3DC;
+  --scrim: rgba(23, 26, 25, 0.45);
+  --shadow: 0 0.6rem 1.6rem rgba(31, 35, 33, 0.14);
+
+  --t-fast: 150ms;
+  --t-med: 220ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --ground: #171A19;
+  --surface: #232826;
+  --surface-2: #1D2120;
+  --sunken: #2E3431;
+  --line: #3A403D;
+  --line-soft: #2C312F;
+  --ink: #F3F1EE;
+  --muted: #A9AEAB;
+  --faint: #7C827F;
+  --on-ink: #171A19;
+  --green: #7CC4A0;
+  --green-soft: #233A2F;
+  --amber-mark: #F08A4B;
+  --amber-ink: #F2B48A;
+  --amber-soft: #3A2A1F;
+  --note: #38331F;
+  --scrim: rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Hub: 1080 x 1920 portrait mockups ---- */
+html[data-mode="hub"] {
+  font-size: calc(100vw / 108);
+  --gutter: 5.6rem;
+  --status-h: 9.6rem;
+  --dock-h: 17.6rem;
+  --gap: 2.4rem;
+  --gap-s: 1.4rem;
+  --r-card: 3.4rem;
+  --r-tile: 2.4rem;
+  --r-pill: 99rem;
+  --tap: 8.8rem;
+  --tap-s: 6.4rem;
+  --fs-hero: 23.2rem;
+  --fs-h1: 7.2rem;
+  --fs-h2: 4rem;
+  --fs-h3: 3rem;
+  --fs-body: 2.6rem;
+  --fs-small: 2.2rem;
+  --fs-label: 2rem;
+  --icon: 3.4rem;
+  --icon-s: 2.6rem;
+  --avatar: 4.8rem;
+}
+
+/* ---- Phone (and anything else): 390-wide mockups ---- */
+html[data-mode="phone"] {
+  font-size: 62.5%;
+  --gutter: 2rem;
+  --status-h: 5.6rem;
+  --dock-h: 8.4rem;
+  --gap: 1.6rem;
+  --gap-s: 0.8rem;
+  --r-card: 2.2rem;
+  --r-tile: 1.6rem;
+  --r-pill: 99rem;
+  --tap: 4.8rem;
+  --tap-s: 4.4rem;
+  --fs-hero: 6.4rem;
+  --fs-h1: 3.4rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.8rem;
+  --fs-body: 1.6rem;
+  --fs-small: 1.3rem;
+  --fs-label: 1.2rem;
+  --icon: 2.2rem;
+  --icon-s: 1.8rem;
+  --avatar: 3.2rem;
+}

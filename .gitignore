@@ -1,0 +1,7 @@
+# Never commit secrets: the household key lives only in Apps Script and on each device.
+*.key
+# Planning notes with household details stay on this PC (the repository is public).
+HOME_HUB_BUILD_PROMPT.md
+.env
+Thumbs.db
+desktop.ini
